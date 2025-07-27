@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulang Tahun Spesial untuk Mommy Tersayang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff5f5;
+            overflow-x: hidden;
+        }
+        
+        .dancing-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .heart {
+            animation: beat 1.2s infinite alternate;
+            transform-origin: center;
+        }
+        
+        @keyframes beat {
+            to { transform: scale(1.1); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            opacity: 0;
+        }
+        
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .photo-frame {
+            border: 15px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: rotate(-5deg);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0" id="confetti-container"></div>
+    
+    <div class="container mx-auto px-4 py-12 max-w-4xl relative z-10">
+        <!-- Header dengan tanggal -->
+        <div class="text-center mb-12 fade-in">
+            <div class="inline-block bg-pink-100 px-6 py-2 rounded-full mb-4">
+                <p class="text-pink-600 font-semibold">31 Juli 2025</p>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-pink-700 dancing-font">Untuk Mommy Tersayang</h1>
+        </div>
+        
+        <!-- Foto utama -->
+        <div class="flex justify-center mb-16 fade-in">
+            <div class="photo-frame bg-white p-2 max-w-md">
+                <img src="WhatsApp Image 2025-07-27 at 15.02.11.jpeg" alt="Potret bahagia Mommy tersenyum dengan latar belakang bunga-bunga warna-warni" class="w-full h-auto" onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/49177137-764f-44a9-9174-c7c87fe95dd0.png'">
+            </div>
+        </div>
+        
+        <!-- Pesan ucapan -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-16 fade-in" style="animation-delay: 0.5s;">
+            <div class="flex justify-center mb-6">
+                <svg class="h-12 w-12 text-pink-500 heart" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 dancing-font mb-8">Selamat Ulang Tahun Mommy!</h2>
+            
+            <div class="space-y-4 text-gray-700 text-lg">
+                <p>Untuk Mommy yang paling luar biasa di dunia,</p>
+                <p>Di hari spesialmu ini, kami ingin mengucapkan selamat ulang tahun yang penuh kebahagiaan! Terima kasih atas semua cinta, perhatian, dan pengorbanan yang tak terhitung jumlahnya untuk keluarga kita.</p>
+                <p>Setiap tawa, pelukan, dan nasihat bijakmu adalah hadiah terindah dalam hidup kami. Kamu adalah bintang yang selalu menerangi hari-hari kami.</p>
+                <p class="text-pink-600 font-semibold">Semoga tahun ini membawa lebih banyak kebahagiaan, kesehatan, dan impian yang terwujud untukmu, Mommy!</p>
+                <p class="text-right dancing-font text-2xl mt-8">Dengan cinta,<br>Keluarga yang menyayangimu</p>
+            </div>
+        </div>
+        
+        
+        
+        <!-- Kutipan -->
+        <div class="text-center mb-16 fade-in" style="animation-delay: 2s;">
+            <blockquote class="text-xl italic text-gray-700 max-w-2xl mx-auto">
+                "Seorang ibu memahami apa yang dikatakan anaknya, bahkan ketika dia tidak berkata-kata."
+                <footer class="mt-2 text-gray-600">- albian</footer>
+            </blockquote>
+        </div>
+        
+        <!-- Animasi cake -->
+        <div class="flex flex-col items-center fade-in" style="animation-delay: 2.5s;">
+            <div class="relative floating mb-4">
+                <div class="w-40 h-40 md:w-48 md:h-48 bg-gradient-to-b from-pink-200 to-pink-300 rounded-t-full rounded-b-lg"></div>
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4 w-6 h-6 bg-pink-400 rounded-full"></div>
+                <div class="absolute top-4 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-yellow-200 rounded-full"></div>
+                <div class="absolute top-8 left-1/2 transform -translate-x-1/2 text-pink-600 font-bold dancing-font">Mommy Zella</div>
+            </div>
+            <button id="wishBtn" class="px-6 py-3 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                </svg>
+                Tiup Lilin & Buat Permohonan
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Memainkan musik
+            const music = document.getElementById('bgMusic');
+            music.volume = 0.3;
+            
+            // Konfeti
+            function createConfetti() {
+                const colors = ['#f87171', '#fbbf24', '#a78bfa', '#60a5fa', '#34d399'];
+                const container = document.getElementById('confetti-container');
+                
+                for (let i = 0; i < 100; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = -10 + 'px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                    
+                    const size = Math.random() * 10 + 5;
+                    confetti.style.width = size + 'px';
+                    confetti.style.height = size + 'px';
+                    
+                    const animationDuration = Math.random() * 3 + 2;
+                    confetti.style.animation = 'drop ' + animationDuration + 's ease-in ' + Math.random() * 5 + 's forwards';
+                    
+                    container.appendChild(confetti);
+                    
+                    // Animasi jatuh
+                    const keyframes = `
+                        @keyframes drop {
+                            to {
+                                opacity: 1;
+                                transform: translateY(100vh) rotate(${Math.random() * 360}deg);
+                            }
+                        }
+                    `;
+                    
+                    const style = document.createElement('style');
+                    style.innerHTML = keyframes;
+                    document.head.appendChild(style);
+                }
+            }
+            
+            // Tombol tiup lilin
+            document.getElementById('wishBtn').addEventListener('click', function() {
+                createConfetti();
+                music.play();
+                this.innerHTML = '<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Permohonanmu akan terkabul!';
+                this.classList.remove('bg-pink-600', 'hover:bg-pink-700');
+                this.classList.add('bg-green-500', 'hover:bg-green-600');
+            });
+            
+            // Tombol play video
+            document.getElementById('playBtn').addEventListener('click', function() {
+                alert('Video ucapan spesial akan diputar jika ada');
+            });
+            
+            // Auto-scroll halus
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>
+
